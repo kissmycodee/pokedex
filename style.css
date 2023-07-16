@@ -1,3 +1,29 @@
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #00ffb6 #ffffff;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #FF8C00 #000000;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FF8C00;
+  border-radius: 5px;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,6 +39,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.link {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav h1 {
+  color: #FF8C00;
+  font-weight: 900;
+  font-size: 44px;
+  letter-spacing: 5px;
+}
 
 .loading-screen {
   position: absolute;
@@ -69,6 +118,7 @@ body {
   font-size: 24px;
 }
 
+/* Navbar */
 
 nav {
   position: fixed;
@@ -177,6 +227,27 @@ nav input {
   align-items: center;
 }
 
+.second-home-info {
+  margin-bottom: 22px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.381);
+  text-align: center;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  -ms-border-radius: 24px;
+  -o-border-radius: 24px;
+}
+
+.main-container-image {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  width: 235px;
+  height: 189px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 
 #pokomon-Image {
   width: 200px;
@@ -187,6 +258,14 @@ nav input {
   -moz-transition: all 500ms ease-in-out;
   -ms-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
+}
+
+#pokomon-Image:hover {
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  -o-transform: scale(1.25);
 }
 
 .d-none {
@@ -218,7 +297,21 @@ nav input {
   -o-border-radius: 40px;
 }
 
-  
+
+.dialog-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  text-transform: capitalize;
+  font-weight: bolder;
+  padding: 10px 50px;
+  padding-bottom: 50px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  height: 220px;
+}
+
 .spez-over-info-container {
   width: 100%;
   display: flex;
@@ -244,154 +337,255 @@ nav input {
   -o-border-radius: 12px;
 }
 
-.dialog-info {
+.margin-bottom-spez {
+  margin-bottom: 10px;
+}
+
+
+
+.dialog-types {
+  margin-top: -12px;
+  margin-left: 8px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.381);
+  text-align: center;
+  border-radius: 18px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+}
+
+#second-info-dialog {
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: black;
-  text-transform: capitalize;
-  font-weight: bolder;
-  padding: 10px 50px;
-  padding-bottom: 50px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  height: 220px;
+  background-color: white;
+  margin-top: -36px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
 }
 
-.containerSkills {
-  background-color: #fff;
-  color: black;
-  border-radius: 30px;
-  margin-left: 16px;
-  margin-right: 16px;
+#second-info-dialog img {
+  margin-top: -100px;
+  margin-bottom: 20px;
+  width: 280px;
+  object-fit: contain;
+  height: 180px;
+}
+
+
+.spez-info-container {
+  font-size: 18px;
+  width: 100%;
+}
+
+
+.image {
+  display: flex;
+}
+
+#left-Image,
+#right-Image {
+    position: relative;
+    width: 60px !important;
+    height: 60px !important;
+    padding-top: -24px;
+    cursor: pointer;
+}
+
+.spez-info {
+  margin: 8px 28px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  text-transform: capitalize;
+}
+
+.nr-diagram {
+  width: 120px;
+  height: 18px;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  font-size: 15px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.nr-digram-bar {
   display: flex;
   justify-content: center;
+  border-radius: 6px;
 }
 
-/* .skills {
-  padding-top: 10px;
-  font-size: 20px;
-} */
-
 .grass {
-  background-color: #68ae28;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #6ec95a, #6ec95a, #6ec95a, #6ec95a, #6ec95a, #68c454, #62c04e, #5cbb48, #4eb03a, #40a62b, #309b1a, #1d9100);
 }
 
 .fire {
-  background-color: #e73820;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #f4803e, #f4803e, #f4803e, #f4803e, #f4803e, #ed7a39, #e67434, #df6e2f, #d06124, #c15419, #b2480c, #a33b00);
 }
 
 .bug {
-  background-color: #1a4b26;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #7bc42b, #7bc42b, #7bc42b, #7bc42b, #7bc42b, #75bc27, #6eb324, #68ab20, #5a9918, #4d870f, #407507, #346400);
 }
 
 .water {
-  background-color: #1551e2;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #2e90d9, #2e90d9, #2e90d9, #2e90d9, #2e90d9, #2b8bd3, #2885cc, #2580c6, #1e74b8, #1569aa, #0b5d9d, #00528f);
 }
 
 .normal {
-  background-color: #75505c;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #909aa2, #909aa2, #909aa2, #909aa2, #909aa2, #8e979e, #8d939b, #8b9097, #87898f, #828386, #7c7c7e, #767676);
 }
 
 .poison {
-  background-color: #b347b3;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #b963cb, #b963cb, #b963cb, #b963cb, #b963cb, #b55dc7, #b056c4, #ac50c0, #a241b8, #9832af, #8e1fa7, #84009f);
 }
 
 .electric {
-  background-color: #f8d02f;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #fcd236, #fcd236, #fcd236, #fcd236, #fcd236, #f5cb32, #edc42e, #e6bd2a, #d5ae21, #c59e17, #b4900c, #a48100);
 }
 
 .ground {
-  background-color: #e0bf68;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #ec7241, #ec7241, #ec7241, #ec7241, #ec7241, #e66d3c, #e06737, #da6232, #cc5627, #bf491b, #b13d0e, #a43001);
 }
 
-.flying {
-  background-color: #49667e;
-  border-radius: 30px;
-}
-
-.dark {
-  background-color: #020506;
-  border-radius: 30px;
-}
 
 .dragon {
-  background-color: #438a97;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #006cc6, #006cc6, #006cc6, #006cc6, #006cc6, #0069c0, #0066bb, #0063b5, #005ca8, #00559b, #004e8e, #004782);
 }
 
 .fairy {
-  background-color: #961842;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #f298ad, #f298ad, #f298ad, #f298ad, #f298ad, #ef8fa5, #ec879d, #e97e95, #e16a82, #d95570, #cf3f5d, #c5234a);
 }
 
 .fighting {
-  background-color: #993f25;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #c4302f, #c4302f, #c4302f, #c4302f, #c4302f, #c02d2b, #bc2928, #b82624, #af1e1c, #a51613, #9c0c0a, #930100);
 }
 
 .ghost {
-  background-color: #32336b;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #6748af, #6748af, #6748af, #6748af, #6748af, #6444ad, #6040aa, #5d3ca8, #5533a3, #4d2a9d, #452198, #3c1792);
 }
 
 .ground {
-  background-color: #a96f2b;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #ec7241, #ec7241, #ec7241, #ec7241, #ec7241, #e66d3c, #e06737, #da6232, #cc5627, #bf491b, #b13d0e, #a43001);
 }
 
 .ice {
-  background-color: #85d1f5;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #36d1c0, #36d1c0, #36d1c0, #36d1c0, #36d1c0, #33cdbc, #2fc9b8, #2cc5b4, #24bcab, #1bb3a2, #10aa99, #00a190);
 }
 
 .psychic {
-  background-color: #a62a6a;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #ff6578, #ff6578, #ff6578, #ff6578, #ff6578, #f85e6f, #f05767, #e9505e, #d8404b, #c62f38, #b41c26, #a20014);
 }
 
 .rock {
-  background-color: #46180b;
-  border-radius: 30px;
+  background-image: linear-gradient(to bottom, #c8b78a, #c8b78a, #c8b78a, #c8b78a, #c8b78a, #c6b280, #c3ae76, #c1a96c, #bc9e56, #b7933f, #b18827, #ac7d00);
 }
 
-.steel {
-  background-color: #5e746c;
-  border-radius: 30px;
-}
+
 
 @media (max-width: 1000px) {
-  .header {
-    flex-direction: column;
-  }
+  nav input {
+    font-size: 16px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.nav-right button {
+    font-size: 16px;
+}
+}
 
-  .detailCard {
-    height: 475px;
-    width: 300px;
+@media screen and (max-width: 875px) {
+  .link {
+      margin-top: -20px;
+      padding-bottom: 25px;
   }
-  .detailImg img {
-    height: 110px;
-    width: 110px;
-    padding: 10px;
+  a {
+      margin-bottom: 4px;
+      font-size: 12px;
   }
-  .containerSkills {
-    max-width: 250px;
-    max-height: 200px;
-    font-size: 10px;
-    margin-left: 16px;
-    margin-right: 16px;
+  .loading-img {
+      width: 220px;
+      height: 220px;
   }
-  .skills {
-    /* padding-top: 10px; */
-    font-size: 20px;
+  nav {
+      margin-top: -10px;
+      flex-direction: column;
+      font-size: 18px;
+  }
+  nav input {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 12px;
+  }
+  nav h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+  }
+  #number-pokemons {
+      margin-left: 90px;
+  }
+  .nav-right {
+      flex-direction: column;
+      margin-top: -12px;
+  }
+  .nav-right button {
+      height: 30px;
+      font-size: 14px;
+  }
+  #pokedex {
+      padding-top: 200px;
+  }
+  .container-main {
+      width: 250px;
+      margin-left: 10px;
+      margin-right: 30px;
+      margin-top: 24px;
+  }
+  .container-spez-info-width {
+      width: 350px;
+  }
+  .dialog-info {
+      height: 150px;
+  }
+  .spez-over-info {
+      margin-top: 0px;
+  }
+  #second-info-dialog {
+      height: 400px;
+  }
+  #second-info-dialog img {
+      width: 180px;
+      height: 140px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container-spez-info-width {
+      margin-bottom: 90px;
+  }
+  nav h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+  }
+  nav input {
+      padding: 8px;
+      font-size: 13px;
+      margin-bottom: 12px;
+  }
+  .nav-right button {
+      height: 30px;
+      font-size: 10px;
+  }
+  #number-pokemons {
+      margin-left: 70px;
   }
 }

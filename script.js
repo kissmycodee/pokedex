@@ -129,6 +129,13 @@ function moveLeft(i) {
     renderDialog(i);
 }
 
+function cardColor(i) {
+    let name = allPokemon[i].types[0].type.name;
+    if (name) document.getElementById(`background-color-card(${i})`).classList.add(name)
+
+}
+
+
 
 function generateRenderDialogHtml(name, img, types, height, weight, i) {
     return `
@@ -175,24 +182,45 @@ function generateSpezInfoHtml(attack, nrBar, nr) {
     `
 }
 
-function cardColor(i) {
-    let name = allPokemon[i].types[0].type.name;
-    if (name) document.getElementById(`background-color-card(${i})`).classList.add(name)
+function newNumber() {
+    let mainContainer = document.getElementById('pokedex');
+    mainContainer.innerHTML = '';
+    let inputLoad = document.getElementById(`number-pokemons`).value;
+    numberOfPokemon = parseInt(inputLoad);
+    allPokemon = [];
 
-}
-
-
-// it renders the searched name if its in array 
-function searchPokemon() {
-    let input = document.getElementById('search').value;
-    const filteredPokemons = pushedPokemons.filter(p => p.name.includes(input));
-
-    if (search == '') {
-        renderPokemons(pushedPokemons)
+    if (inputLoad > 0) {
+        loadPokemon();
+        document.getElementById(`number-pokemons`).value = ``;
     } else {
-        console.log(filteredPokemons);
-        renderPokemons(filteredPokemons);
+        alert(`bitte min. 1 Eingeben`)
     }
 }
 
+// it renders the searched name if its in array 
+function filterNames() {
+    let search = document.getElementById('search-pokemon').value;
+    search = search.toLowerCase();
+    let found = document.getElementById('pokedex');
+    found.innerHTML = '';
+    definePokemon(search, found);
+
+}
+
+function definePokemon(search, found) {
+    for (let i = 0; i < allPokemon.length; i++) {
+        let name = allPokemon[i].name;
+        let types = allPokemon[i][`types`][0][`type`][`name`];
+        let img = allPokemon[i][`sprites`][`other`][`dream_world`][`front_default`];
+        whereIsThePokemon(name, types, i, search, found, img);
+    };
+}
+
+
+function whereIsThePokemon(name, types, i, search, found, img) {
+    if (name.toLowerCase().includes(search)) {
+        found.innerHTML += generateMainHtml(i, name, types, img);
+        document.getElementById(`background-color-main(${i})`).classList.add(types);
+    }
+}
 
